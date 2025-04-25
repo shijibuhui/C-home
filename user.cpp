@@ -1,5 +1,5 @@
 #include <iostream>
-#include "person.hpp"
+#include "user.hpp"
 
 //构造函数
 User::User(const std::string& name,const std::string& password,long long int account) :account(account),name(name),password(password){}

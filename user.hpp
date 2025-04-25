@@ -1,5 +1,5 @@
-#ifndef PERSON_HPP
-#define PERSON_HPP
+#ifndef USER_HPP
+#define USER_HPP
 
 #include <string>
 
