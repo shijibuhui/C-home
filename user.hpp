@@ -20,6 +20,8 @@ class User
         long long int getAccount() const;
 
         void displayInfo() const;
+        virtual std::string getType() const;
+        virtual std::string serialize() const;
 };
 
 //家长类
@@ -33,32 +35,35 @@ class Parents : public User
         std::string getKidName() const;
 
         void displayInfo() const;
-        std::string getType() const;
-        std::string serialize() const;
+        std::string getType() const override;
+        std::string serialize() const override;
 };
 
 class Teacher : public User
 {
     public:
+        Teacher(const std::string& name,const std::string& password, long long int account);
         void displayInfo() const;
-        std::string getType() const;
-        std::string serialize() const;
+        std::string getType() const override;
+        std::string serialize() const override;
 };
 
 class Buyer : public User
 {
     public:
+        Buyer(const std::string& name,const std::string& password, long long int account);
         void displayInfo() const;
-        std::string getType() const;
-        std::string serialize() const;
+        std::string getType() const override;
+        std::string serialize() const override;
 };
 
 class Admin : public User
 {
     public:
+        Admin(const std::string& name,const std::string& password, long long int account);
         void displayInfo() const;
-        std::string getType() const;
-        std::string serialize() const;
+        std::string getType() const override;
+        std::string serialize() const override;
 };
 
 #endif

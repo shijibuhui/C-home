@@ -13,14 +13,14 @@ class UserFileManager
         std::string filename;
     public:
         // 构造函数，初始化文件名
-        UserFileManager(const std::string& filename) : filename(filename) {}
+        UserFileManager(const std::string& filename);
         
         // 从文件中加载用户数据
 
         std::vector<User*> loadUsers();
         
         //将用户数据保存到文件中
-        void saveUsers(std::vector<User*>& users);
+        void saveUsers(const std::vector<User*>& users);
 };
 
 #endif

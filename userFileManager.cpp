@@ -43,11 +43,23 @@ std::vector<User*> UserFileManager::loadUsers()
                 std::string kidName = line.substr(pos + 1);// 提取pos位置之后的子字符串作为孩子的名字
                 // 创建Parents对象并添加到users容器中
                 // Parents构造函数的参数包括账户、名称、密码和孩子名字
-                users.push_back(new Parents(account, name, password, kidName));
+                users.push_back(new Parents(name, password, account, kidName));
             }
-            else(type == "User")
+            else if(type == "Admin")
             {
-                users.push_back(new User(account, name, password));
+                users.push_back(new Admin(name, password, account));
+            }
+            else if(type == "Teacher")
+            {
+                users.push_back(new Teacher(name, password, account));
+            }
+            else if(type == "Buyer")
+            {
+                users.push_back(new Buyer(name, password, account));
+            }
+            else
+            {
+                std::cout << "未知的用户类型！" << type << std::endl;
             }
         }
         file.close();

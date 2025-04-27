@@ -2,7 +2,10 @@
 #include "user.hpp"
 
 //构造函数
-User::User(const std::string& name,const std::string& password,long long int account) :account(account),name(name),password(password){}
+User::User(const std::string& name,const std::string& password,long long int account) : name(name), password(password), account(account){}
+Admin::Admin(const std::string& name,const std::string& password,long long int account) :User(name, password, account){}
+Teacher::Teacher(const std::string& name,const std::string& password,long long int account) :User(name, password, account){}
+Buyer::Buyer(const std::string& name,const std::string& password,long long int account) :User(name, password, account){}
 
 void User::setName(const std::string& newName)
 {
@@ -72,7 +75,7 @@ std::string Parents::getType() const
 // 返回值: 返回包含Parents对象信息的字符串，格式为"Parents:账户信息,父母名称,孩子名称"
 std::string Parents::serialize() const
 {
-    return "Parents:" + std::to_string(account) + "," + name + "," + kidName;
+    return "Parents:" + std::to_string(getAccount()) + "," + getName() + "," + kidName;
 }
 
 void Teacher::displayInfo() const
@@ -87,7 +90,7 @@ std::string Teacher::getType() const
 
 std::string Teacher::serialize() const
 {
-    return "Teacher:" + std::to_string(account) + "," + name;
+    return "Teacher:" + std::to_string(getAccount()) + "," + getName();
 }
 
 void Buyer::displayInfo() const
@@ -102,7 +105,7 @@ std::string Buyer::getType() const
 
 std::string Buyer::serialize() const
 {
-    return "Buyer:" + std::to_string(account) + "," + name;
+    return "Buyer:" + std::to_string(getAccount()) + "," + getName();
 }
 
 void Admin::displayInfo() const
@@ -117,5 +120,15 @@ std::string Admin::getType() const
 
 std::string Admin::serialize() const
 {
-    return "Admin:" + std::to_string(account) + "," + name;
+    return "Admin:" + std::to_string(getAccount()) + "," + getName();
+}
+
+std::string User::getType() const
+{
+    return "User";
+}
+
+std::string User::serialize() const
+{
+    return "User:" + std::to_string(getAccount()) + "," + getName();
 }
