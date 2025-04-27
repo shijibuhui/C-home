@@ -4,24 +4,34 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "UserClasses.hpp"
-#include "UserFileManager.hpp"
+#include "user.hpp"
 
-Class UserManager 
-{
+// 用户管理类，负责用户信息的存储、读取和更新
+Class UserManager {
     private:
+        // 存储用户信息的容器
         std::vector<User> users;
+        // 用户文件管理器，用于处理用户数据的文件读写
         UserFileManager userFileManager;
         
+        // 从文件中加载用户信息
         void loadUsers();
+
     public:
+        // 构造函数，初始化用户管理器
         UserManager(std::string fileName);
+        // 析构函数，释放用户管理器资源
         ~UserManager();
 
+        // 创建新用户
         void createUser(User* user);
-        User* readUser(int account);
-        void updateUser(int account,std::string newName,std::string newPassword);
-        void deleteUser(int account);
+        // 根据账号读取用户信息
+        User* readUser(long long int account);
+        // 更新用户信息
+        void updateUser(long long int account,std::string newName,std::string newPassword);
+        // 删除用户
+        void deleteUser(long long int account);
+        // 显示所有用户信息
         void displayAllUsers();
 };
 
