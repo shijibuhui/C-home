@@ -19,8 +19,8 @@ std::vector<User*> UserFileManager::loadUsers()
         while(std::getline(file, line))
         {
             // 解析用户类型
-            size_t pos = line.find(",");     // 查找字符串中的逗号位置，用于后续分割字符串
-            std::string type = line.substr(0, pos);      // 提取逗号前的字符串作为类型信息
+            size_t pos = line.find(",");       // 查找字符串中的逗号位置，用于后续分割字符串
+            std::string type = line.substr(0, pos);    // 提取逗号前的字符串作为类型信息
             line = line.substr(pos + 1);       // 更新原始字符串，保留逗号后的部分，以备下一次处理
 
             // 解析用户账号

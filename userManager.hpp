@@ -7,7 +7,8 @@
 #include "user.hpp"
 
 // 用户管理类，负责用户信息的存储、读取和更新
-Class UserManager {
+class UserManager 
+{
     private:
         // 存储用户信息的容器
         std::vector<User> users;
