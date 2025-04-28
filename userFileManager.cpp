@@ -75,7 +75,7 @@ std::vector<User*> UserFileManager::loadUsers()
 // 参数: users - 待保存的用户信息列表
 void UserFileManager::saveUsers(const std::vector<User*>& users) 
 {
-    std::ofstream file(filename,std::ios::app);  // 尝试打开指定的文件以写入用户信息
+    std::ofstream file(filename);  // 尝试打开指定的文件以写入用户信息
     if(file.is_open())  //如果文件打开成功
     {
         for(const auto& user : users)// 遍历用户集合，将每个用户的信息写入文件
