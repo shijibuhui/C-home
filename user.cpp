@@ -52,7 +52,7 @@ std::string Parents::getKidName() const
 
 void User::displayInfo() const
 {
-    std::cout << "Name: " << name << ", Account : " << account <<  ", Password: " << password << std::endl;
+    std::cout << "姓名: " << name << ", 账号: " << account <<  ", 密码: " << password << std::endl;
 }
 
 void Parents::displayInfo() const
@@ -65,8 +65,8 @@ void Parents::displayInfo() const
 // 类Parents中的成员函数getType的实现
 std::string Parents::getType() const
 {
-    // 返回类的类型标识字符串"Parents"
-    return "Parents";
+    // 返回类的类型标识字符串"家长"
+    return "家长";
 }
 
 
@@ -85,7 +85,7 @@ void Teacher::displayInfo() const
 
 std::string Teacher::getType() const
 {
-    return "Teacher";
+    return "教师";
 }
 
 std::string Teacher::serialize() const
@@ -100,7 +100,7 @@ void Buyer::displayInfo() const
 
 std::string Buyer::getType() const
 {
-    return "Buyer";
+    return "采购员";
 }
 
 std::string Buyer::serialize() const
@@ -115,17 +115,12 @@ void Admin::displayInfo() const
 
 std::string Admin::getType() const
 {
-    return "Admin";
+    return "管理员";
 }
 
 std::string Admin::serialize() const
 {
     return std::to_string(getAccount()) + "," + getName() + "," + getPassword();
-}
-
-std::string User::getType() const
-{
-    return "User";
 }
 
 std::string User::serialize() const
