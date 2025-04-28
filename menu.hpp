@@ -1,6 +1,8 @@
 #ifndef MENU_HPP
 #define MENU_HPP
 
+#include "UserManager.hpp"
+
 class Menu
 {
     public:
@@ -10,5 +12,7 @@ class Menu
         void showBuyMenu();
         void showBuyerBookMenu();
 };
+
+void userManagementSystem(UserManager& manager);
 
 #endif

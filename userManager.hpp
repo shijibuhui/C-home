@@ -12,9 +12,9 @@ class UserManager
 {
     private:
         // 存储用户信息的容器
-        std::vector<User> users;
+        std::vector<User*> users;
         // 用户文件管理器，用于处理用户数据的文件读写
-        UserFileManager userFileManager;
+        UserFileManager fileManager;
         
         // 从文件中加载用户信息
         void loadUsers();

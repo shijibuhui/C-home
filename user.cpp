@@ -75,7 +75,7 @@ std::string Parents::getType() const
 // 返回值: 返回包含Parents对象信息的字符串，格式为"Parents:账户信息,父母名称,孩子名称"
 std::string Parents::serialize() const
 {
-    return "Parents:" + std::to_string(getAccount()) + "," + getName() + "," + kidName;
+    return std::to_string(getAccount()) + "," + getName() + "," + getPassword() + "," + kidName;
 }
 
 void Teacher::displayInfo() const
@@ -90,7 +90,7 @@ std::string Teacher::getType() const
 
 std::string Teacher::serialize() const
 {
-    return "Teacher:" + std::to_string(getAccount()) + "," + getName();
+    return std::to_string(getAccount()) + "," + getName() + "," + getPassword();
 }
 
 void Buyer::displayInfo() const
@@ -105,7 +105,7 @@ std::string Buyer::getType() const
 
 std::string Buyer::serialize() const
 {
-    return "Buyer:" + std::to_string(getAccount()) + "," + getName();
+    return std::to_string(getAccount()) + "," + getName() + "," + getPassword();
 }
 
 void Admin::displayInfo() const
@@ -120,7 +120,7 @@ std::string Admin::getType() const
 
 std::string Admin::serialize() const
 {
-    return "Admin:" + std::to_string(getAccount()) + "," + getName();
+    return std::to_string(getAccount()) + "," + getName() + "," + getPassword();
 }
 
 std::string User::getType() const
@@ -130,5 +130,5 @@ std::string User::getType() const
 
 std::string User::serialize() const
 {
-    return "User:" + std::to_string(getAccount()) + "," + getName();
+    return std::to_string(getAccount()) + "," + getName() + "," + getPassword();
 }

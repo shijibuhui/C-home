@@ -1,9 +1,10 @@
 #include <iostream>
 #include "UserManager.hpp"
+#include "UserFileManager.hpp"
 
 // UserManager类的构造函数，初始化fileManager并加载用户数据
-UserManager::UserManager(const std::string filename)
-    : fileManager(filename)
+UserManager::UserManager(const std::string fileName)
+    : fileManager(fileName)
 {
     this->loadUsers();
 }
@@ -81,7 +82,7 @@ void UserManager::deleteUser(long long int account)
 }
 
 // 显示所有用户的信息
-void UserManger::displayAllUsers()
+void UserManager::displayAllUsers()
 {
     for(User* user : users)
     {
