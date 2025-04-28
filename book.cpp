@@ -2,7 +2,7 @@
 #include <string>
 #include "book.hpp"
 
-Book(std::string bookName,std::string author,int ISBN,int number,std::string publisher,int price) : bookName(bookName),author(author),ISBN(ISBN),number(number),publisher(publisher),price(price){}
+Book::Book(std::string bookName,std::string author,int ISBN,int number,std::string publisher,int price) : bookName(bookName),author(author),ISBN(ISBN),number(number),publisher(publisher),price(price){}
 
 void Book::setBookName(std::string newBookName)
 {
