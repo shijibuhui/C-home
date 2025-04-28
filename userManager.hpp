@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include "user.hpp"
+#include "userFileManager.hpp"
 
 // 用户管理类，负责用户信息的存储、读取和更新
 class UserManager 

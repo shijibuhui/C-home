@@ -1,5 +1,7 @@
 #include <iostream>
 #include "user.hpp"
+#include "UserManager.hpp"
+#include "userFileManager.hpp"
 
 int main()
 {
