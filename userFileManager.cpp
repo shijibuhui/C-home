@@ -38,22 +38,22 @@ std::vector<User*> UserFileManager::loadUsers()
             std::string password = line.substr(0, pos);
 
             // 根据用户类型创建用户对象
-            if(type == "Parents")
+            if(type == "家长")
             {
                 std::string kidName = line.substr(pos + 1);// 提取pos位置之后的子字符串作为孩子的名字
                 // 创建Parents对象并添加到users容器中
                 // Parents构造函数的参数包括账户、名称、密码和孩子名字
                 users.push_back(new Parents(name, password, account, kidName));
             }
-            else if(type == "Admin")
+            else if(type == "管理员")
             {
                 users.push_back(new Admin(name, password, account));
             }
-            else if(type == "Teacher")
+            else if(type == "教师")
             {
                 users.push_back(new Teacher(name, password, account));
             }
-            else if(type == "Buyer")
+            else if(type == "采购员")
             {
                 users.push_back(new Buyer(name, password, account));
             }
@@ -75,7 +75,7 @@ std::vector<User*> UserFileManager::loadUsers()
 // 参数: users - 待保存的用户信息列表
 void UserFileManager::saveUsers(const std::vector<User*>& users) 
 {
-    std::ofstream file(filename);  // 尝试打开指定的文件以写入用户信息
+    std::ofstream file(filename,std::ios::app);  // 尝试打开指定的文件以写入用户信息
     if(file.is_open())  //如果文件打开成功
     {
         for(const auto& user : users)// 遍历用户集合，将每个用户的信息写入文件
