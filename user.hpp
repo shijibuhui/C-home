@@ -20,7 +20,7 @@ class User
         long long int getAccount() const;
 
         void displayInfo() const;
-        virtual std::string getType() const;
+        virtual std::string getType() const = 0;
         virtual std::string serialize() const;
 };
 

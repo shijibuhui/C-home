@@ -25,7 +25,7 @@ std::vector<User*> UserFileManager::loadUsers()
 
             // 解析用户账号
             pos = line.find(",");
-            long long int account = std::stoi(line.substr(0, pos));  // 使用std::stoi函数将line字符串的子串转换为长整型
+            long long int account = std::stoll(line.substr(0, pos));  // 使用std::stoi函数将line字符串的子串转换为长整型
             line = line.substr(pos + 1);
 
             // 解析用户名

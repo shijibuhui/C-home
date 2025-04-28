@@ -96,9 +96,21 @@ void userManagementSystem(UserManager& manager)   //用户管理界面
                     std::cin >> kidName;
                     newUser = new Parents(name,password,account,kidName);
                 }
+                else if(userType == 1)
+                {
+                    newUser = new Admin(name,password,account);
+                }
+                else if(userType == 2)
+                {
+                    newUser = new Buyer(name,password,account);
+                }
+                else if(userType == 3)
+                {
+                    newUser = new Teacher(name,password,account);
+                }
                 else
                 {
-                    newUser = new User(name,password,account);
+                    std::cout << "无效的用户类型！" << std::endl;
                 }
                 manager.createUser(newUser);
                 break;
