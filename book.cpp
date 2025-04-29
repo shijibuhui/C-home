@@ -63,3 +63,13 @@ std::string Book::getPublisher() const
 {
     return publisher;
 }
+
+void Book::display() const
+{
+    std::cout << "书名: " << bookName << ", 作者: " << author <<  ", ISBN编号: " << ISBN << std::endl << ",出版社：" << publisher;
+}
+
+std::string Book::serialize() const   //存储格式
+{
+    return bookName + "," + author + "," + std::to_string(ISBN) + "," + std::to_string(number) + "," + publisher + "," + std::to_string(price);
+}

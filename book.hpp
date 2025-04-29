@@ -27,6 +27,9 @@ class Book
         int getPrice() const;
         void setPublisher(std::string newPublisher);
         std::string getPublisher() const;
+
+        void display() const;
+        std::string serialize() const;
 };
 
 #endif
